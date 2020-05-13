@@ -1,0 +1,19 @@
+.zap-marker {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        transition: all 1s;
+        user-select: none;
+    }
+    &.zap-active:before {
+        background-color: rgba(#3E72C4, .5);
+    }
+    &.zap-error:before {
+        background-color: red;
+    }
+}

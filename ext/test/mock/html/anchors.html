@@ -1,0 +1,13 @@
+<div class="valid-anchors">
+    <a href="http://mock.com" id="anchor-id" class="mock-anchor">first anchor</a>
+    <a href="http://mock.com" class="no-id-class">no id anchor</a>
+    <a href="http://mock.com" id="no-class-id">no class anchor</a>
+    <a id="no-href-id" class="no-href-class">no href anchor</a>
+    <a href="http://mock.com">no selector anchor</a>
+</div>
+<div class="invalid-anchors">
+    <a>no attributes anchor</a>
+    <a href="http://mock.com" class="no-text-class" id="no-text-id"></a>
+    <!-- Duplicate anchor - should be excluded -->
+    <a href="http://mock.com" id="duplicate" class="mock-anchor">first anchor</a>
+</div>

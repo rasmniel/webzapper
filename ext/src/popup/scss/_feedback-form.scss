@@ -1,0 +1,30 @@
+.feedback-form {
+    .name-input, .message-input {
+        width: 150px;
+        margin-bottom: 10px;
+        border: 1px $gray solid;
+    }
+    .response {
+        margin: 0;
+    }
+    .hint {
+        i {
+            display: inline;
+            cursor: pointer;
+            position: absolute;
+            top: 145px;
+            right: 10px;
+            color: $dark;
+            font-size: 18px;
+        }
+        .content {
+            margin: 8px 0 0 4px;
+            display: none;
+        }
+        &:hover {
+            .content {
+                display: block;
+            }
+        }
+    }
+}

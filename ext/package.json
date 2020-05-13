@@ -1,0 +1,81 @@
+{
+    "name": "zap-ext",
+    "version": "1.2.0",
+    "description": "Chrome extension: Slave frontend for the distributed application.",
+    "author": "Rasmus Nielsen",
+    "license": "MIT",
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build --live",
+        "test": "jest --watchAll",
+        "spec": "jest --coverage --verbose"
+    },
+    "dependencies": {
+        "escape-string-regexp": "^1.0.5",
+        "fingerprintjs2": "^1.5.1",
+        "prop-types": "^15.6.0",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "socket.io-client": "^2.0.3"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-jest": "^21.2.0",
+        "babel-plugin-react": "^1.0.0",
+        "babel-plugin-transform-new-target": "^7.0.0-alpha.14",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babelify": "^7.3.0",
+        "browserify": "^14.4.0",
+        "eslint-plugin-react": "^7.6.1",
+        "fancy-log": "^1.3.2",
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-eslint": "^4.0.2",
+        "gulp-if": "^2.0.2",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-react": "^3.1.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglify": "^3.0.0",
+        "jest": "^21.2.1",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0",
+        "yargs": "^9.0.1"
+    },
+    "babel": {
+        "presets": [
+            "es2015"
+        ],
+        "plugins": [
+            "transform-new-target"
+        ]
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "sourceType": "module",
+            "ecmaVersion": 6
+        },
+        "extends": "eslint:recommended",
+        "rules": {
+            "camelcase": 1,
+            "complexity": 1,
+            "eqeqeq": 1,
+            "no-console": 0,
+            "no-empty": 0,
+            "no-extra-boolean-cast": 1,
+            "no-undef": 0,
+            "no-undef-init": 1,
+            "no-undefined": 1,
+            "no-unreachable": 1,
+            "no-unused-vars": 0,
+            "semi": 1
+        }
+    },
+    "jest": {
+        "testRegex": "/test/spec.*\\.tests\\.js$",
+        "collectCoverageFrom": [
+            "src/**.js",
+            "!**/index.js"
+        ]
+    }
+}

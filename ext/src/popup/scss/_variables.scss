@@ -1,0 +1,16 @@
+$white: #FFFFFF;
+$smoke: #F2F2F2;
+$gray: #CECECE;
+$dark: #6D6D6D;
+$dim: #5A5A5A;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $smoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content {
+    margin: 8px 10px;
+}
