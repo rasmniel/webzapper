@@ -19,7 +19,7 @@ Setting up the system for use can be done with the following steps:
 Being connected to the browser should now allow you to navigate the currently displayed webpage, albeit with some caveats that you may discover for yourself.
 
 
-# Overview
+## Overview
 The system consists of 3 main components:
 - Browser extension (developed for Chrome)
 - Node.js server with Socket.IO
