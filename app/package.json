@@ -32,7 +32,9 @@
         "react-test-renderer": "16.0.0-alpha.12"
     },
     "babel": {
-        "presets": ["react-native"]
+        "presets": [
+            "react-native"
+        ]
     },
     "jest": {
         "preset": "react-native"

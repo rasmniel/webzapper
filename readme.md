@@ -37,7 +37,8 @@ A few thoughts pertaining to improving the system and developing it going forwar
 - Some components could use some refactor, or an entire rewrite.
 - Optimally the server should be replaced by a node.js server running in the extension, which can be connected to by devices on the same network. 
 - Several extra input features, which should be obvious to most users, such as tabIndex navigation, escape- and arrow key emulation, and more nuanced media controls.
-- If you have a suggestion for improvement, feel free to post an issue on this repository. 
+- Several dependencies need scrutiny, as a number of them are flagged as vulnerabilities by GitHub.
+- If you have a suggestion for improvement, feel free to post an issue on this repository.
 
 
 # Contribution
