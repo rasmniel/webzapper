@@ -18,7 +18,7 @@
         "express": "~4.14.0",
         "fingerprintjs2": "^1.5.1",
         "jade": "~1.11.0",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.19",
         "nodemon": "^1.11.0",
         "socket.io": "^1.7.1",
         "yargs": "^11.0.0"
