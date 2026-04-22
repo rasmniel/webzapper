@@ -1,0 +1,25 @@
+.policy-list {
+    @extend %default-padding;
+}
+
+.cookie-policy {
+    background-color: $smoke;
+    @include shadow-border();
+    .cookie {
+        position: relative;
+        overflow: hidden;
+        padding-top: 20px;
+        .content {
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            height: 250px;
+            opacity: .25;
+        }
+    }
+}

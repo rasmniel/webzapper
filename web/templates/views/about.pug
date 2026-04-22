@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block section
+    section.row
+        .getting-started.column.small-12
+            .content!= siteGlobals.gettingStarted
+            .links
+                p Direct download links:
+                p: a(href=(siteGlobals.appLink) target="_blank")
+                    i.material-icons link
+                    | The app can be downloaded here
+                p: a(href=(siteGlobals.extLink) target="_blank")
+                    i.material-icons link
+                    | The extension can be downloaded here
+
+    section.about-section
+        .row
+            .column.small-12
+                .content!= siteGlobals.about
+                p You can read more about me on my website:
+                    | &nbsp;
+                    a(href=(siteGlobals.masterLink) target="_blank") Unpuzzled.one

@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block section
+    if policies
+        section.row.policy-list
+            each policy in policies
+                .policy.column.small-12
+                    h2= policy.title
+                    .content!=policy.content
+
+    section.cookie-policy
+        .cookie
+            .row
+                .column.small-12
+                    h3= cookiePolicy.title
+                    .content!= cookiePolicy.content
+                img(src="../images/cookie.svg")

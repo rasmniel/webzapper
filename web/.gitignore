@@ -1,0 +1,17 @@
+# Logs
+*.log
+
+# JetBrains .idea meta files.
+.idea
+
+# Node modules
+node_modules
+
+# Database export
+export
+
+# Ignore .env configuration files
+.env
+
+# Ignore .DS_Store files on OS X
+.DS_Store

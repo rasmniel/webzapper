@@ -1,0 +1,53 @@
+{
+    "name": "web",
+    "version": "1.2.0",
+    "description": "CMS support website for the distributed Webzapper application.",
+    "private": true,
+    "main": "keystone.js",
+    "scripts": {
+        "start": "node keystone.js",
+        "dev": "nodemon keystone.js"
+    },
+    "dependencies": {
+        "keystone": "4.0.0-beta.5",
+        "lodash": "^4.13.1",
+        "pug": "2.0.0-beta11",
+        "node-sass": "4.5.0",
+        "node-sass-middleware": "0.11.0",
+        "dotenv": "4.0.0",
+        "async": "2.1.4"
+    },
+    "devDependencies": {
+        "eslint-config-keystone": "3.0.0",
+        "eslint-plugin-react": "^7.6.1",
+        "fancy-log": "^1.3.2",
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-eslint": "^4.0.2",
+        "gulp-if": "^2.0.2",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-uglify": "^3.0.0",
+        "nodemon": "^1.17.3",
+        "yargs": "^9.0.1"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "sourceType": "module",
+            "ecmaVersion": 6
+        },
+        "extends": "eslint:recommended",
+        "rules": {
+            "camelcase": 1,
+            "complexity": 1,
+            "eqeqeq": 1,
+            "no-console": 0,
+            "no-empty": 0,
+            "no-extra-boolean-cast": 1,
+            "no-undef": 0,
+            "no-undef-init": 1,
+            "no-undefined": 1,
+            "no-unreachable": 1,
+            "no-unused-vars": 0,
+            "semi": 1
+        }
+    }
+}

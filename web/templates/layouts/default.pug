@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="google-site-verification" content="hGvbiahDoat0BKAmB56fMNiuRJeLFlPsXceSwrA4lbM")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+        title= title
+
+        link(rel="shortcut icon", type="image/png" sizes="96x96" href="/favicon-96x96.png")
+        link(rel="shortcut icon", type="image/png" sizes="32x32" href="/favicon-32x32.png")
+        link(rel="shortcut icon", type="image/png" sizes="16x16" href="/favicon-16x16.png")
+
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:700|Roboto")
+        link(rel="stylesheet", href="/style/main.css")
+
+    body(class=(section))
+
+        header#header: .row
+            .column.small-12
+                .header-content
+                    a(href="/"): img.logo(src="../images/logo.png")
+                    a(href="/"): strong= brand
+                    ul.navigation
+                        each link in navigation
+                            li(class=(section == link.key ? 'active' : null))
+                                a(href=link.href)= link.label
+
+        main#body
+            block section
+
+        footer#footer: .row
+            .footer-logo.column.small-12.large-7
+                .content
+                    img.logo(src="../images/logo.png")
+                    strong= brand
+            .footer-links.column.small-12.large-5
+                p: strong Get started with these application links:
+                ul
+                    li: a(href=(siteGlobals.appLink) target="_blank") Android™ App
+                    li: a(href=(siteGlobals.extLink) target="_blank") Google Chrome™ Extension
+            .footer-credits.column.small-12
+                hr
+                p #{title} system and website by Rasmus Nielsen @&nbsp;
+                    a(href=(siteGlobals.masterLink) target="_blank") Unpuzzled.one

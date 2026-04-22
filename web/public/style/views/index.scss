@@ -1,0 +1,133 @@
+.hero {
+    position: relative;
+    @extend %extend-row;
+    .title-wrapper {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        user-select: none;
+        text-align: center;
+        background: rgba(0, 0, 0, .25);
+        .title {
+            padding: $column-gutter;
+            color: $smoke;
+        }
+        h1 {
+            display: inline;
+            @include font-sizes(28px, 34px, 48px);
+            font-family: $header-font-family;
+        }
+        @include large() {
+            max-width: 1200px;
+            top: 32vh;
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+            text-align: left;
+            .title {
+                color: $white;
+            }
+        }
+        @include xlarge() {
+            top: 20px;
+            text-align: right;
+            .title h1 {
+                padding: 10px 25px;
+                background: rgba(0, 0, 0, .25);
+                border-radius: 15px;
+                color: $white;
+            }
+        }
+    }
+
+    $full-height: 100vh;
+    $half-height: 50vh;
+    height: $half-height;
+    .background {
+        width: 100%;
+        height: $half-height;
+        position: fixed;
+        z-index: -1;
+        background: url('../images/web-hero.png') no-repeat bottom;
+        background-size: cover;
+    }
+    @include large() {
+        height: $full-height;
+        .background {
+            height: $full-height;
+        }
+    }
+    @include xlarge() {
+        height: $half-height;
+        .background {
+            height: $half-height;
+        }
+    }
+}
+
+.heading {
+    padding: 50px;
+    text-align: center;
+    background-color: $gray;
+    @include shadow-border();
+    h1 {
+        @include font-sizes(20px, 24px, 38px);
+        font-family: $header-font-family;
+        margin: 0;
+    }
+}
+
+.content-body {
+    background-color: $white;
+}
+
+.features {
+    @extend %default-padding;
+    .feature {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        .text {
+            position: relative;
+            line-height: 1.5;
+            z-index: 1;
+        }
+        i {
+            font-size: 120px;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            opacity: .1;
+            @include medium() {
+                position: static;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.news {
+    @extend %intermediary-section;
+    @extend %default-padding;
+    .title {
+        margin-bottom: 40px;
+        text-align: center;
+        @include font-sizes(20px, 24px, 28px);
+    }
+    .article {
+        .content {
+            padding-top: 20px;
+            position: relative;
+            h1, h2, h3 {
+                font-size: 18px;
+            }
+        }
+        .date {
+            @include monospace();
+            text-align: right;
+            opacity: .6;
+        }
+    }
+}
+

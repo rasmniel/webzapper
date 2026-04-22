@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text>// Chrome extension UML class diagram.</help_text>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>108</x>
+      <y>180</y>
+      <w>1170</w>
+      <h>462</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+fontsize=24
+layer=-2
+Webzapper Extension</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>210</y>
+      <w>132</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Popup
+--
+
+- socket : Socket
+- code : string
+
+--
+
+- initSocket()
++ toggleConnection()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>444</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Actions
+--
+
++ masterCheck(respond : function)
++ navigateTab(action : object)
++ messageActiveTab(action : object)
++ emit(action : object)
+- activeTab(callback : function)
+- toggleFullscreen()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>342</y>
+      <w>192</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Dispatch(action : object, respond : function)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>120</x>
+      <y>318</y>
+      <w>432</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>bg=white
+layer=-1
+Background script</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>342</y>
+      <w>168</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+App
+--
++ getSocket() : SocketIO
+- initDispatch()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>402</y>
+      <w>168</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=red
+Socket
+--
+
++ Socket(dispatch : function,
+        host : string,
+        fingerprint : string)
+- dispatch : function
+- host : string
+- fingerprint : string
+- socket : SocketIO
+- code : string
+
+--
+
+- initSocket()
++ connect()
++ disconnect()
+- onType(type : string, payload : any)
+- onConnect(callback : function)
+- onDisconnect(callback : function)
++ connected() : boolean
++ emit(action: object)
+- cacheCheck(action : object) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>552</y>
+      <w>192</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+HashCache
+--
+- map : object
+--
+
++ hashCheck(action : object) : boolean
+- hashCode(string) : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>342</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>354</y>
+      <w>18</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>366</y>
+      <w>48</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>444</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>582</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>204</x>
+      <y>300</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>258</y>
+      <w>168</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>bg=green
+fg=blue
+chrome
+--
+sendMessage(id : int, message : object)
+onMessage(callback : function)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>456</y>
+      <w>72</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>bg=green
+fg=blue
+*Script injection*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>480</y>
+      <w>186</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Actions
+--
+
++ navigateUrl(url : string)
++ navigateHistory(method : string)
++ changeInput(inputChange : object)
++ clickElement(selector : string)
++ submitForm(selector : string)
++ controlVideo(command : object)
+- setVideoTime(video : object, time : float)
+- togglePlayback(video : object)
+- toggleFullscreen(video : object)
++ smoothScroll (speed : float)
+- doScroll(speed : float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>420</y>
+      <w>114</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Dispatch(action : object)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>600</x>
+      <y>210</y>
+      <w>666</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>bg=white
+layer=-1
+Content script</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>654</x>
+      <y>432</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>432</y>
+      <w>48</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>60.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>534</x>
+      <y>276</y>
+      <w>66</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;320.0;90.0;320.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>306</y>
+      <w>66</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;200.0;10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>264</x>
+      <y>210</y>
+      <w>192</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+The global chrome object is simplified.
+
+Concrete element factories are singletons.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>234</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Element
+--
++ Element(tag, id, className : string)
++ selector : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>546</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Input
+--
+
+Input(id, className : string, 
+        type, value, placeholder : string
+        button : boolean)
++ type, value, placeholder : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>438</y>
+      <w>138</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Form
+--
+
++ Form(id, className : string,
+        action : string
+        inputs : array:Input)
++ actions : string
++ inputs : array:Input</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>348</y>
+      <w>138</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Anchor
+--
+
++ Anchor(id, className : string,
+        href, textContent : string)
++ href, textContent : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>282</y>
+      <w>138</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+Video
+--
++ Video(id, className : string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>234</y>
+      <w>156</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+/&lt;&lt;abstract&gt;&gt;/
+/InputFactory/
+--
+/InputFactory(type : string)/
++ type : string
+--
+
+# declare(query : object)
+/# find(query : object) : array:Element/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>348</y>
+      <w>180</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+AnchorFactory
+--
++ AnchorFactory()
+--
+
+# find(query : object) : array:Anchor
+- createAnchor(element : object) : Anchor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>234</y>
+      <w>168</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+VideoFactory
+--
++ VideoFactory()
+--
+
++ declare(query : object)
+# find(query : object) : array:Video
+- createVideo(element : object) : Video</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>486</y>
+      <w>246</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+FormFactory
+--
++ FormFactory()
+--
+
+# find(query : object) : array:Form
+- createForm(element : object, inputs : array:Input) : Form
+- createInput(element : object, button : bool) : Input
+- createButton(element : object) : Input
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>288</y>
+      <w>54</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+receive &gt;</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1242</x>
+      <y>264</y>
+      <w>18</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;470.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>288</y>
+      <w>36</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>40.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>552</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>498</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>378</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>294</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>252</y>
+      <w>198</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+&lt; send</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>372</y>
+      <w>36</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>40.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>456</y>
+      <w>36</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>40.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>270</y>
+      <w>174</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+&lt; send</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>288</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>300</y>
+      <w>204</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-
+receive &gt;</panel_attributes>
+    <additional_attributes>320.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>330</y>
+      <w>144</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+FactoryFacade
+--
+
++ declareVideos()
++ declareAnchors(query : string)
++ declareForms()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>390</y>
+      <w>42</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;60.0;50.0;60.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>360</y>
+      <w>138</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>layer=1
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>762</x>
+      <y>288</y>
+      <w>78</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>fg=dark_gray
+lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>282</y>
+      <w>150</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>layer=1
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;110.0;150.0;110.0;150.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>378</y>
+      <w>102</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>layer=1
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>762</x>
+      <y>252</y>
+      <w>138</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>fg=dark_gray
+lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>762</x>
+      <y>270</y>
+      <w>126</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>fg=dark_gray
+lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;200.0;190.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>354</y>
+      <w>78</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>110.0;10.0;110.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+</diagram>

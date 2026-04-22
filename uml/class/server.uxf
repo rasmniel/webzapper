@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text>// Socket server UML class diagram.</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>64</y>
+      <w>216</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+/&lt;&lt;abstract&gt;&gt;/
+/Socket/
+--
+
+/+ Socket(id, ip, ua : string,/
+/        socket : Socket.IO,/
+/        types : array:string)/
+- id, ip, ua : string
+- socket : Socket.IO
+
+--
+
+- initTypes(types : array:string)
++ emit(type : string, payload : any)
+/# onType(type : string, payload : any)/
+/+ onDisconnect()/
++ toObject() : object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>328</y>
+      <w>216</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=blue
+MasterSocket
+--
+
++ MasterSocket(id, ip, ua : string, 
+        socket : SocketIO)
+- slave : SlaveSocket
+- types : array:string
+
+--
+
+- commandSlave(type : string,
+        payload : any)
+- requestSlave(code : string)
++ setSlave(slave : SlaveSocket)
+# onType(type : string, payload : any)
++ onDisconnect()
++ toObject() : object
++ toString() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>160</y>
+      <w>136</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>64</y>
+      <w>216</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=red
+SlaveSocket
+--
+
++ SlaveSocket(id, ip, ua : string, 
+        socket : SocketIO)
+- master : MasterSocket
+- types : array:string
+- code : string
+
+--
+
+- initCode()
++ setMaster(master : MasterSocket)
+# onType(type : string, payload : any)
++ onDisconnect()
++ toObject() : object
++ toString() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>272</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>24</x>
+      <y>24</y>
+      <w>576</w>
+      <h>696</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+fontsize=24
+layer=-1
+Webzapper Server</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>240</y>
+      <w>136</w>
+      <h>424</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;510.0;90.0;510.0;90.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>600</y>
+      <w>216</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+SocketServer
+--
+
+- onConnect(socket : SocketIO)
+- acceptSocket()
+- kickSocket()
+- onMasterConfirm()
+- onSlaveConfirm()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>544</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>472</y>
+      <w>208</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+InstanceMap
+--
+- map : object
+--
+
++ read(id : string) : Socket
++ add(id : string, value : Socket)
++ remove(id : string)
++ find(property : string, value : any)
++ count() : int
++ clone() : object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>360</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+fg=black
+CodeArray
+--
+- codes : array:string
+--
+
++ generate() : string
++ remove(code : string)
++ count() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>344</x>
+      <y>328</y>
+      <w>240</w>
+      <h>296</h>
+    </coordinates>
+    <panel_attributes>bg=white
+Memory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>680</y>
+      <w>144</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>600</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>512</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>272</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>400</x>
+      <y>656</y>
+      <w>184</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+Memory classes are singletons.
+
+Server logging class omitted.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>224</y>
+      <w>136</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;70.0;210.0;70.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>208</y>
+      <w>136</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;50.0;210.0;50.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+</diagram>

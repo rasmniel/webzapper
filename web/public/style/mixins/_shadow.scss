@@ -1,0 +1,20 @@
+@mixin shadow($size: 15px) {
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -$size;
+        height: $size;
+        width: 100%;
+        z-index: -1;
+        background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+    }
+}
+
+@mixin shadow-border($size: 15px) {
+    @include shadow($size);
+    border-top: $default-border;
+    border-bottom: $default-border;
+}

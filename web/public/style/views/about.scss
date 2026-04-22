@@ -1,0 +1,16 @@
+.getting-started {
+    @extend %default-padding;
+    .links {
+        i {
+            position: relative;
+            top: 6px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.about-section {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    @extend %intermediary-section;
+}

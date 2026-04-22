@@ -1,0 +1,18 @@
+@import '../_lib/mixins/breakpoints';
+
+@mixin font-sizes($small, $medium, $large) {
+    font-size: $small;
+    @include medium() {
+        font-size: $medium;
+    }
+    @include large() {
+        font-size: $large;
+    }
+}
+
+@mixin monospace($size: 14px, $shadow: 1px) {
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: $size;
+    text-shadow: $shadow $shadow $white;
+}

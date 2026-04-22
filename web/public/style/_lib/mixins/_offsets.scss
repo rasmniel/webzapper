@@ -1,0 +1,44 @@
+@mixin small-offset($size) {
+    margin-left: column-size($size);
+}
+
+@mixin medium-offset($size) {
+    @include medium() {
+        margin-left: column-size($size);
+    }
+}
+
+@mixin large-offset($size) {
+    @include large() {
+        margin-left: column-size($size);
+    }
+}
+
+@mixin xlarge-offset($size) {
+    @include xlarge() {
+        margin-left: column-size($size);
+    }
+}
+
+@mixin offset($breakpoint, $size) {
+    @if ($breakpoint == 'small') {
+        @include small-offset($size);
+    } @else if ($breakpoint == 'medium') {
+        @include medium-offset($size);
+    } @else if ($breakpoint == 'large') {
+        @include large-offset($size);
+    } @else if ($breakpoint == 'xlarge') {
+        @include xlarge-offset($size);
+    }
+}
+
+@mixin offsets($small: 2, $medium: 2, $large: 2, $xlarge: null) {
+    @if $xlarge == null {
+        $xlarge: $large;
+    }
+    @extend .column;
+    @include xlarge-offset($xlarge);
+    @include large-offset($large);
+    @include medium-offset($medium);
+    @include small-offset($small);
+}

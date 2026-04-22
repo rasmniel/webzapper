@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block section
+    .hero
+        .title-wrapper
+            .title
+                h1 An experiment in accessibility
+        .background
+
+    .heading
+        h1= brand + ': Browser Remote Control'
+
+    .content-body
+        if features
+            section.features
+                each feature, i in features
+                    .feature.row
+                        if i % 2 == 0
+                            .icon.column.small-12.medium-3.large-2
+                                i.material-icons!= feature.icon
+                            .text.column.small-12.medium-9.large-9.large-offset-1
+                                h3: strong= feature.title
+                                p= feature.content
+                        else
+                            .column.small-12.medium-9.large-9
+                                .text
+                                    h3: strong= feature.title
+                                    p= feature.content
+                            .column.small-12.medium-3.large-2
+                                .icon
+                                    i.material-icons!= feature.icon
+        if news
+            section.news
+                .row
+                    .column.small-12
+                        h2.title Updates
+                        hr
+                    each article in news
+                        .article.column.small-12
+                            .content
+                                | !{article.content}
+                                .date= article.getFormattedDate()
+                                hr

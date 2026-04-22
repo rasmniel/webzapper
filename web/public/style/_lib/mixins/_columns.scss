@@ -1,0 +1,44 @@
+@mixin small-column($size) {
+    width: column-size($size);
+}
+
+@mixin medium-column($size) {
+    @include medium() {
+        width: column-size($size);
+    }
+}
+
+@mixin large-column($size) {
+    @include large() {
+        width: column-size($size);
+    }
+}
+
+@mixin xlarge-column($size) {
+    @include xlarge() {
+        width: column-size($size);
+    }
+}
+
+@mixin column($breakpoint, $size) {
+    @if ($breakpoint == 'small') {
+        @include small-column($size);
+    } @else if ($breakpoint == 'medium') {
+        @include medium-column($size);
+    } @else if ($breakpoint == 'large') {
+        @include large-column($size);
+    } @else if ($breakpoint == 'xlarge') {
+        @include xlarge-column($size);
+    }
+}
+
+@mixin columns($small: 12, $medium: 12, $large: 12, $xlarge: null) {
+    @if $xlarge == null {
+        $xlarge: $large;
+    }
+    @extend .column;
+    @include xlarge-column($xlarge);
+    @include large-column($large);
+    @include medium-column($medium);
+    @include small-column($small);
+}

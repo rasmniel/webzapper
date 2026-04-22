@@ -1,0 +1,64 @@
+body {
+    font-family: $body-font-family;
+    color: $dim;
+}
+
+h1, h2, h3 {
+    font-family: $header-font-family;
+}
+
+h1 {
+    margin-bottom: 18px;
+    font-size: 28px;
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+a {
+    color: $dark;
+    transition: .2s all;
+}
+
+.content {
+    ul, ol {
+        margin-left: 20px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 14px;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+// Extensions
+%default-padding {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+%extend-row {
+    @include large() {
+        .row {
+            max-width: 1200px;
+        }
+    }
+}
+
+%intermediary-section {
+    @include shadow-border();
+    background-color: $smoke;
+    font-size: 14px;
+}
